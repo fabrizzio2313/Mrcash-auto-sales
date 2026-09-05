@@ -368,6 +368,9 @@
       "setStatus": "Cambiar estado:",
       "from": "De",
       "about": "Sobre el vehículo",
+      "call": "Llamar",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
       "type": {
         "TEST_DRIVE": "Prueba de Manejo",
         "FINANCING": "Financiamiento",

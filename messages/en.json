@@ -368,6 +368,9 @@
       "setStatus": "Set status:",
       "from": "From",
       "about": "About vehicle",
+      "call": "Call",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
       "type": {
         "TEST_DRIVE": "Test Drive",
         "FINANCING": "Financing",

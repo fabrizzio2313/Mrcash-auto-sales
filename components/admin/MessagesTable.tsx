@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { updateLeadStatus } from "@/lib/actions/leads";
+import { PhoneIcon, WhatsAppIcon, MailIcon } from "@/components/icons";
 import type { Lead, Vehicle } from "@/lib/generated/prisma/client";
 
 type LeadWithVehicle = Lead & { vehicle: Vehicle | null };
@@ -11,6 +12,9 @@ const STATUS_STYLES: Record<Lead["status"], string> = {
 };
 
 const ALL_STATUSES: Lead["status"][] = ["NEW", "CONTACTED", "CLOSED"];
+
+const QUICK_ACTION_CLASS =
+  "inline-flex min-h-9 items-center gap-1.5 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800";
 
 export default async function MessagesTable({
   leads,
@@ -31,7 +35,16 @@ export default async function MessagesTable({
 
   return (
     <ul className="flex flex-col gap-3">
-      {leads.map((lead) => (
+      {leads.map((lead) => {
+        // Lead phone/email are free text — normalize before building links.
+        // tel: keeps a leading "+" and digits; wa.me wants digits only.
+        const telNumber = lead.phone?.replace(/[^\d+]/g, "") ?? "";
+        const waNumber = lead.phone?.replace(/\D/g, "") ?? "";
+        const email = lead.email?.trim() ?? "";
+        const hasPhone = waNumber.length > 0;
+        const hasEmail = email.length > 0;
+
+        return (
         <li key={lead.id} className={`rounded-xl border p-4 ${STATUS_STYLES[lead.status]}`}>
           <div className="flex flex-wrap items-start justify-between gap-2">
             <div className="min-w-0">
@@ -68,6 +81,34 @@ export default async function MessagesTable({
             </p>
           )}
 
+          {(hasPhone || hasEmail) && (
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              {hasPhone && (
+                <a href={`tel:${telNumber}`} className={QUICK_ACTION_CLASS}>
+                  <PhoneIcon className="h-4 w-4" />
+                  {t("call")}
+                </a>
+              )}
+              {hasPhone && (
+                <a
+                  href={`https://wa.me/${waNumber}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={QUICK_ACTION_CLASS}
+                >
+                  <WhatsAppIcon className="h-4 w-4" />
+                  {t("whatsapp")}
+                </a>
+              )}
+              {hasEmail && (
+                <a href={`mailto:${email}`} className={QUICK_ACTION_CLASS}>
+                  <MailIcon className="h-4 w-4" />
+                  {t("email")}
+                </a>
+              )}
+            </div>
+          )}
+
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <span className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
               {t("setStatus")}
@@ -98,7 +139,8 @@ export default async function MessagesTable({
             })}
           </div>
         </li>
-      ))}
+        );
+      })}
     </ul>
   );
 }
