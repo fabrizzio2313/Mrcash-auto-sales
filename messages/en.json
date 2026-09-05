@@ -1,0 +1,403 @@
+{
+  "nav": {
+    "home": "Home",
+    "inventory": "Inventory",
+    "about": "About Us",
+    "faq": "FAQ",
+    "reviews": "Reviews",
+    "location": "Location",
+    "contact": "Contact",
+    "financing": "Financing",
+    "testDrive": "Test Drive",
+    "admin": "Admin"
+  },
+  "cta": {
+    "call": "Call",
+    "text": "Text",
+    "whatsapp": "WhatsApp",
+    "scheduleTestDrive": "Schedule Test Drive",
+    "applyFinancing": "Apply for Financing",
+    "whatsappMessage": "Hi! I'm interested in a vehicle from Mr. Cash Auto Sales.",
+    "whatsappMessageVehicle": "Hi! I'm interested in vehicle #{vehicleId} from Mr. Cash Auto Sales."
+  },
+  "seo": {
+    "defaultTitle": "Mr. Cash Auto Sales — Quality Used Cars in Lake Wales, FL",
+    "defaultDescription": "Browse quality used cars, trucks, and SUVs at Mr. Cash Auto Sales in Lake Wales, FL. Honest pricing, in-house financing, and a hassle-free buying experience.",
+    "home": {
+      "title": "Used Cars for Sale in Lake Wales, FL",
+      "description": "Shop our hand-picked inventory of inspected used cars, trucks, and SUVs in Lake Wales, FL. Apply for financing or schedule a test drive today."
+    },
+    "inventory": {
+      "title": "Used Car Inventory",
+      "description": "Browse our full inventory of quality used vehicles. Filter by make, model, year, price, and mileage to find your perfect car."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Learn about Mr. Cash Auto Sales — a Lake Wales, FL dealership offering inspected used vehicles, transparent pricing, and friendly service."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with Mr. Cash Auto Sales in Lake Wales, FL. Call, text, email, or send a message about a vehicle or financing."
+    },
+    "financing": {
+      "title": "Apply for Auto Financing",
+      "description": "Get pre-qualified for auto financing in minutes at Mr. Cash Auto Sales. Applying has no impact on your credit score."
+    },
+    "testDrive": {
+      "title": "Schedule a Test Drive",
+      "description": "Book a test drive at Mr. Cash Auto Sales in Lake Wales, FL. Pick your vehicle and a time that works for you."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "description": "Answers to common questions about financing, trade-ins, vehicle inspections, warranties, and buying a used car from Mr. Cash Auto Sales."
+    },
+    "location": {
+      "title": "Visit Our Dealership",
+      "description": "Directions, hours, and address for Mr. Cash Auto Sales at 244 E Bullard Ave, Lake Wales, FL 33853."
+    }
+  },
+  "footer": {
+    "tagline": "Quality used cars, honest prices.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "facebook": "Follow us on Facebook",
+    "rights": "All rights reserved."
+  },
+  "home": {
+    "heroTitle": "Find Your Next Car Today",
+    "heroSubtitle": "Hand-picked, inspected used vehicles at prices that make sense.",
+    "browseInventory": "Browse Inventory",
+    "contactUs": "Contact Us",
+    "whyUsTitle": "Why Buy From Us",
+    "whyUs1Title": "Inspected Vehicles",
+    "whyUs1Body": "Every car passes a multi-point inspection before it hits the lot.",
+    "whyUs2Title": "Fair Pricing",
+    "whyUs2Body": "Transparent, no-haggle pricing on every vehicle.",
+    "whyUs3Title": "Financing Available",
+    "whyUs3Body": "We work with multiple lenders to get you approved.",
+    "featuredTitle": "Featured Vehicles",
+    "viewAll": "View All Inventory",
+    "quickSearchButton": "Search"
+  },
+  "inventory": {
+    "title": "Our Inventory",
+    "subtitle": "Browse our full selection of quality used vehicles.",
+    "searchPlaceholder": "Search make or model...",
+    "filterMake": "Make",
+    "allMakes": "All Makes",
+    "allModels": "All Models",
+    "anyYear": "Any Year",
+    "anyPrice": "Any Price",
+    "underPrice": "Under ${price}",
+    "anyMileage": "Any Mileage",
+    "underMileage": "Under {mileage} mi",
+    "filterStatus": "Status",
+    "allStatuses": "All",
+    "sortBy": "Sort by",
+    "sortNewest": "Newest",
+    "sortPriceAsc": "Price: Low to High",
+    "sortPriceDesc": "Price: High to Low",
+    "noResults": "No vehicles match your search.",
+    "apply": "Apply Filters",
+    "resultsCount": "{count, plural, =0 {No vehicles} one {# vehicle} other {# vehicles}} found"
+  },
+  "vehicle": {
+    "year": "Year",
+    "make": "Make",
+    "model": "Model",
+    "trim": "Trim",
+    "price": "Price",
+    "mileage": "Mileage",
+    "miles": "miles",
+    "color": "Color",
+    "fuelType": "Fuel Type",
+    "transmission": "Transmission",
+    "bodyType": "Body Type",
+    "vin": "VIN",
+    "stockNumber": "Stock #",
+    "status": "Status",
+    "description": "Description",
+    "features": "Features",
+    "onSale": "On Sale",
+    "specifications": "Specifications",
+    "backToInventory": "Back to Inventory",
+    "interestedTitle": "Interested in this vehicle?",
+    "contactAbout": "Contact us about this vehicle",
+    "sendMessage": "Or send us a message",
+    "shareTitle": "Share",
+    "shareText": "Check out this {title} at Mr. Cash Auto Sales:",
+    "shareCopyLink": "Copy link",
+    "shareCopied": "Link copied!",
+    "metaDescription": "{year} {make} {model} for sale at ${price} with {mileage} miles. Inspected, fairly priced, and ready for a test drive at Mr. Cash Auto Sales.",
+    "statusAvailable": "Available",
+    "statusPending": "Pending Sale",
+    "statusSold": "Sold",
+    "fuel": {
+      "GASOLINE": "Gasoline",
+      "DIESEL": "Diesel",
+      "HYBRID": "Hybrid",
+      "ELECTRIC": "Electric"
+    },
+    "transmissionType": {
+      "AUTOMATIC": "Automatic",
+      "MANUAL": "Manual"
+    }
+  },
+  "about": {
+    "title": "About Our Dealership",
+    "body1": "For years we've helped drivers in our community find reliable, affordable used vehicles. Every car on our lot is inspected, reconditioned, and backed by our team.",
+    "body2": "We believe buying a car should be straightforward — transparent pricing, no pressure, and a staff that actually wants to help you find the right fit.",
+    "hoursTitle": "Hours",
+    "mondayFriday": "Monday - Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question about a vehicle or financing? Send us a message.",
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Thanks! We'll get back to you shortly.",
+    "error": "Something went wrong. Please try again.",
+    "address": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email"
+  },
+  "financing": {
+    "title": "Apply for Financing",
+    "subtitle": "Get pre-qualified in minutes — no impact to your credit score.",
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "vehicleLabel": "Vehicle you're interested in",
+    "anyVehicle": "No specific vehicle",
+    "message": "Anything else we should know? (income, down payment, trade-in, etc.)",
+    "submit": "Submit Application",
+    "submitting": "Submitting...",
+    "success": "Thanks! Our finance team will reach out shortly.",
+    "error": "Something went wrong. Please try again.",
+    "disclaimer": "This is a pre-qualification request, not a final loan offer. Submitting this form does not guarantee approval and has no impact on your credit score."
+  },
+  "testDrive": {
+    "title": "Schedule a Test Drive",
+    "subtitle": "Pick a vehicle and a time that works for you — we'll confirm by phone or email.",
+    "vehicleLabel": "Vehicle",
+    "selectVehicle": "Select a vehicle...",
+    "date": "Preferred Date",
+    "time": "Preferred Time",
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Anything else we should know? (optional)",
+    "submit": "Request Test Drive",
+    "submitting": "Sending...",
+    "success": "Thanks! We'll confirm your test drive shortly.",
+    "error": "Something went wrong. Please try again."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to the questions we hear most.",
+    "financingQ": "Do you offer financing for buyers with less-than-perfect credit?",
+    "financingA": "Yes — we work with multiple lenders and have options for a wide range of credit situations. Apply for financing online and our team will follow up with the best offer we can find.",
+    "tradeInQ": "Can I trade in my current vehicle?",
+    "tradeInA": "Absolutely. Bring your vehicle by for a free appraisal, or mention it when you contact us and we'll walk you through the process.",
+    "inspectedQ": "Are your vehicles inspected before they're sold?",
+    "inspectedA": "Every vehicle on our lot passes a multi-point inspection and is reconditioned before it's listed for sale.",
+    "warrantyQ": "Do you offer a warranty?",
+    "warrantyA": "Many of our vehicles come with a limited warranty, and extended warranty options are available at the time of purchase. Ask our sales team for details on a specific vehicle.",
+    "testDriveQ": "Can I schedule a test drive online?",
+    "testDriveA": "Yes — use the \"Schedule Test Drive\" button anywhere on the site, pick the vehicle and a time that works for you, and we'll confirm by phone or email.",
+    "documentsQ": "What documents do I need to buy a car?",
+    "documentsA": "You'll typically need a valid driver's license, proof of insurance, and proof of income if you're financing. Our team will let you know if anything else is needed for your situation."
+  },
+  "reviews": {
+    "title": "Customer Reviews",
+    "subtitle": "See what our customers say — and share your own experience.",
+    "homeTitle": "What Our Customers Say",
+    "viewAll": "Read all reviews",
+    "averageSummary": "{rating} out of 5 · {count, plural, one {# review} other {# reviews}}",
+    "leaveTitle": "Leave a Review",
+    "name": "Your Name",
+    "rating": "Rating",
+    "comment": "Your Review",
+    "submit": "Submit Review",
+    "submitting": "Submitting...",
+    "success": "Thanks for your review! It will appear on the site once our team approves it.",
+    "error": "Something went wrong. Please try again.",
+    "empty": "No reviews yet. Be the first to leave one!"
+  },
+  "location": {
+    "title": "Visit Our Dealership",
+    "subtitle": "Come see our inventory in person — no appointment needed.",
+    "addressTitle": "Address",
+    "directionsTitle": "Getting Here",
+    "directionsBody": "We're located on E Bullard Ave in Lake Wales, with plenty of customer parking on site. Look for the Mr. Cash Auto Sales sign out front.",
+    "getDirections": "Get Directions"
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Login",
+      "subtitle": "Sign in to manage inventory.",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign In",
+      "submitting": "Signing in...",
+      "error": "Invalid email or password."
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "vehicles": "Vehicles",
+      "messages": "Messages",
+      "reviews": "Reviews",
+      "settings": "Business Settings",
+      "account": "My Account",
+      "viewSite": "View Site",
+      "logout": "Log Out"
+    },
+    "settings": {
+      "title": "Business Settings",
+      "subtitle": "Edit the contact info, hours, and links shown across the public site. Leave a field blank to use the default.",
+      "sectionBusiness": "Business",
+      "sectionContact": "Contact",
+      "sectionAddress": "Address",
+      "sectionHours": "Hours",
+      "sectionSocial": "Social",
+      "sectionNotifications": "Lead notifications",
+      "businessName": "Business name",
+      "phoneDisplay": "Phone (as shown)",
+      "phoneE164": "Phone (for call/text links)",
+      "whatsappE164": "WhatsApp number",
+      "email": "Email",
+      "addressLine1": "Address line 1",
+      "addressLine2": "Address line 2 (city, state, ZIP)",
+      "hoursWeekdays": "Monday – Friday",
+      "hoursSaturday": "Saturday",
+      "hoursSunday": "Sunday",
+      "facebookUrl": "Facebook page URL",
+      "notificationEmail": "Lead notification email",
+      "e164Hint": "Use the international format for the call/text and WhatsApp numbers, e.g. +18632410086.",
+      "notificationEmailHint": "Where to send an alert whenever a new test drive, financing, or contact request comes in. Leave blank to turn notifications off.",
+      "save": "Save Settings",
+      "saving": "Saving...",
+      "success": "Settings saved. The public site has been updated.",
+      "error": "Something went wrong. Please check the fields and try again."
+    },
+    "account": {
+      "title": "My Account",
+      "loggedInAs": "Signed in as {name} ({email})",
+      "changePasswordTitle": "Change Password",
+      "changePasswordSubtitle": "Enter your current password, then choose a new one.",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password (min. 8 characters)",
+      "confirmPassword": "Confirm New Password",
+      "submit": "Update Password",
+      "submitting": "Updating...",
+      "success": "Your password has been updated.",
+      "error": "Something went wrong. Please try again."
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "welcome": "Welcome back, {name}",
+      "totalVehicles": "Total Vehicles",
+      "available": "Available",
+      "sold": "Sold",
+      "newMessages": "New Leads",
+      "pendingReviews": "Pending Reviews"
+    },
+    "vehicles": {
+      "title": "Vehicles",
+      "addNew": "Add Vehicle",
+      "edit": "Edit",
+      "delete": "Delete",
+      "confirmDelete": "Are you sure you want to delete this vehicle? This cannot be undone.",
+      "noVehicles": "No vehicles yet.",
+      "table": {
+        "vehicle": "Vehicle",
+        "price": "Price",
+        "status": "Status",
+        "featured": "Featured",
+        "actions": "Actions"
+      }
+    },
+    "form": {
+      "newTitle": "Add New Vehicle",
+      "editTitle": "Edit Vehicle",
+      "make": "Make",
+      "model": "Model",
+      "year": "Year",
+      "trim": "Trim (optional)",
+      "price": "Price (USD)",
+      "onSale": "On sale",
+      "originalPrice": "Original price (optional, shown struck through)",
+      "mileage": "Mileage",
+      "vin": "VIN (optional)",
+      "stockNumber": "Stock # (optional)",
+      "color": "Color",
+      "fuelType": "Fuel Type",
+      "transmission": "Transmission",
+      "bodyType": "Body Type",
+      "status": "Status",
+      "featured": "Feature on homepage",
+      "description": "Description",
+      "features": "Features (one per line)",
+      "photos": "Photos",
+      "addPhotoUrl": "Add",
+      "uploadFromDevice": "Upload from device",
+      "uploading": "Uploading...",
+      "primaryPhoto": "Cover photo",
+      "makePrimary": "Set as cover",
+      "moveUp": "Move up",
+      "moveDown": "Move down",
+      "removePhoto": "Remove",
+      "save": "Save Vehicle",
+      "saving": "Saving...",
+      "cancel": "Cancel"
+    },
+    "messages": {
+      "title": "Leads",
+      "noMessages": "No leads yet.",
+      "searchPlaceholder": "Search by name, phone, or email...",
+      "allTypes": "All Types",
+      "allStatuses": "All Statuses",
+      "applyFilters": "Filter",
+      "setStatus": "Set status:",
+      "from": "From",
+      "about": "About vehicle",
+      "type": {
+        "TEST_DRIVE": "Test Drive",
+        "FINANCING": "Financing",
+        "GENERAL_INQUIRY": "General Inquiry"
+      },
+      "status": {
+        "NEW": "New",
+        "CONTACTED": "Contacted",
+        "CLOSED": "Closed"
+      }
+    },
+    "reviews": {
+      "title": "Reviews",
+      "subtitle": "Approve pending reviews to publish them on the site, or remove reviews at any time.",
+      "pendingTitle": "Pending",
+      "approvedTitle": "Approved",
+      "rejectedTitle": "Rejected",
+      "noPending": "No pending reviews.",
+      "noApproved": "No approved reviews.",
+      "noRejected": "No rejected reviews.",
+      "approve": "Approve",
+      "reject": "Reject",
+      "delete": "Delete",
+      "ratingValue": "{rating}/5",
+      "confirmReject": "Reject this review? It won't be shown on the site.",
+      "confirmDelete": "Delete this review permanently? This cannot be undone."
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "currency": "USD"
+  }
+}

@@ -1,0 +1,177 @@
+// Prisma schema for the dealership inventory + admin auth.
+// Using SQLite for local development — swap `provider` to "postgresql"
+// and update DATABASE_URL when moving to production.
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../lib/generated/prisma"
+  moduleFormat = "esm"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum VehicleStatus {
+  AVAILABLE
+  PENDING
+  SOLD
+}
+
+enum FuelType {
+  GASOLINE
+  DIESEL
+  HYBRID
+  ELECTRIC
+}
+
+enum Transmission {
+  AUTOMATIC
+  MANUAL
+}
+
+enum LeadType {
+  TEST_DRIVE
+  FINANCING
+  GENERAL_INQUIRY
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  CLOSED
+}
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Vehicle {
+  id   String @id @default(cuid())
+  // URL slug for the public detail page (/inventory/[slug]), e.g.
+  // "2022-honda-civic-lx". Generated from year/make/model/trim on
+  // create and update — see lib/slug.ts and lib/actions/vehicles.ts.
+  slug String @unique
+
+  year         Int
+  make         String
+  model        String
+  trim         String?
+  bodyType     String?
+  mileage      Int
+  price        Int // stored in whole currency units (e.g. USD), no decimals
+  vin          String?       @unique
+  stockNumber  String?       @unique
+  color        String?
+  fuelType     FuelType      @default(GASOLINE)
+  transmission Transmission  @default(AUTOMATIC)
+  status       VehicleStatus @default(AVAILABLE)
+  featured     Boolean       @default(false)
+
+  // "On sale" pricing: when onSale is true, originalPrice is shown struck
+  // through next to the (lower) current `price`.
+  onSale        Boolean @default(false)
+  originalPrice Int?
+
+  description String?
+
+  // Comma/newline-separated list of feature names (e.g. "Bluetooth\nSunroof").
+  // SQLite has no native array scalar in Prisma, so lists are stored as
+  // delimited text here — same convention used for photo URLs in the admin
+  // form (see lib/actions/vehicles.ts).
+  features String?
+
+  photos    Photo[]
+  leads     Lead[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([make, model])
+}
+
+model Photo {
+  id        String  @id @default(cuid())
+  url       String
+  order     Int     @default(0)
+  vehicle   Vehicle @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+  vehicleId String
+
+  @@index([vehicleId])
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         String   @default("admin")
+  createdAt    DateTime @default(now())
+}
+
+// Editable business info shown across the public site (header CTAs, footer,
+// contact + location pages). Single-row table — the row id is always
+// "singleton" (see lib/settings.ts). Any column left null falls back to the
+// compiled-in default in lib/site.ts, so the site works before it's ever
+// saved. Admins edit this at /admin/settings.
+model Settings {
+  id String @id @default("singleton")
+
+  businessName  String?
+  phoneDisplay  String? // human-readable, e.g. "(863) 241-0086"
+  phoneE164     String? // dialable, e.g. "+18632410086" — used for tel:/sms:
+  whatsappE164  String? // WhatsApp number; falls back to phoneE164 if blank
+  email         String?
+  addressLine1  String?
+  addressLine2  String?
+  hoursWeekdays String? // Monday–Friday, e.g. "9:00 AM – 7:00 PM"
+  hoursSaturday String?
+  hoursSunday   String?
+  facebookUrl   String?
+
+  // Inbox that gets an email whenever a new lead comes in (test drive,
+  // financing, or contact). Blank = notifications disabled. Sending is done
+  // via Resend — see lib/email.ts and RESEND_API_KEY / EMAIL_FROM in .env.
+  notificationEmail String?
+
+  updatedAt DateTime @updatedAt
+}
+
+model Lead {
+  id    String @id @default(cuid())
+  name  String
+  phone String?
+  email String
+
+  type LeadType @default(GENERAL_INQUIRY)
+
+  vehicle   Vehicle? @relation(fields: [vehicleId], references: [id], onDelete: SetNull)
+  vehicleId String?
+
+  preferredDate DateTime?
+  message       String?
+
+  status    LeadStatus @default(NEW)
+  createdAt DateTime   @default(now())
+
+  @@index([status])
+  @@index([vehicleId])
+}
+
+// Customer-submitted testimonial shown on the public site. Anyone can create
+// one from /reviews; it lands as PENDING and stays hidden from the public
+// until an admin approves it at /admin/reviews. Admins can reject a pending
+// review or delete an approved/rejected one at any time.
+model Review {
+  id      String       @id @default(cuid())
+  name    String
+  rating  Int // 1–5 stars
+  comment String
+  status  ReviewStatus @default(PENDING)
+
+  createdAt DateTime @default(now())
+
+  @@index([status])
+}

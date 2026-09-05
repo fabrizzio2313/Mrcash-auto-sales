@@ -1,0 +1,403 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "inventory": "Inventario",
+    "about": "Nosotros",
+    "faq": "Preguntas",
+    "reviews": "Reseñas",
+    "location": "Ubicación",
+    "contact": "Contacto",
+    "financing": "Financiamiento",
+    "testDrive": "Test Drive",
+    "admin": "Admin"
+  },
+  "cta": {
+    "call": "Llamar",
+    "text": "Enviar Texto",
+    "whatsapp": "WhatsApp",
+    "scheduleTestDrive": "Agendar Test Drive",
+    "applyFinancing": "Aplicar para Financiamiento",
+    "whatsappMessage": "¡Hola! Estoy interesado/a en un vehículo de Mr. Cash Auto Sales.",
+    "whatsappMessageVehicle": "¡Hola! Estoy interesado/a en el vehículo #{vehicleId} de Mr. Cash Auto Sales."
+  },
+  "seo": {
+    "defaultTitle": "Mr. Cash Auto Sales — Autos Usados de Calidad en Lake Wales, FL",
+    "defaultDescription": "Explora autos, camionetas y SUVs usados de calidad en Mr. Cash Auto Sales, Lake Wales, FL. Precios honestos, financiamiento propio y una compra sin complicaciones.",
+    "home": {
+      "title": "Autos Usados en Venta en Lake Wales, FL",
+      "description": "Explora nuestro inventario seleccionado de autos, camionetas y SUVs usados e inspeccionados en Lake Wales, FL. Aplica para financiamiento o agenda un test drive hoy."
+    },
+    "inventory": {
+      "title": "Inventario de Autos Usados",
+      "description": "Explora todo nuestro inventario de vehículos usados de calidad. Filtra por marca, modelo, año, precio y kilometraje para encontrar tu auto ideal."
+    },
+    "about": {
+      "title": "Nosotros",
+      "description": "Conoce Mr. Cash Auto Sales — un dealership en Lake Wales, FL que ofrece vehículos usados inspeccionados, precios transparentes y servicio amigable."
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "description": "Ponte en contacto con Mr. Cash Auto Sales en Lake Wales, FL. Llama, envía un mensaje de texto, correo, o escríbenos sobre un vehículo o financiamiento."
+    },
+    "financing": {
+      "title": "Aplica para Financiamiento",
+      "description": "Precalifica para financiamiento de auto en minutos con Mr. Cash Auto Sales. Aplicar no afecta tu puntaje de crédito."
+    },
+    "testDrive": {
+      "title": "Agenda un Test Drive",
+      "description": "Agenda un test drive en Mr. Cash Auto Sales en Lake Wales, FL. Elige tu vehículo y un horario que te convenga."
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "description": "Respuestas a preguntas comunes sobre financiamiento, autos de cambio, inspecciones, garantías y la compra de un auto usado en Mr. Cash Auto Sales."
+    },
+    "location": {
+      "title": "Visita Nuestro Dealership",
+      "description": "Direcciones, horario y la dirección de Mr. Cash Auto Sales en 244 E Bullard Ave, Lake Wales, FL 33853."
+    }
+  },
+  "footer": {
+    "tagline": "Autos usados de calidad, precios honestos.",
+    "quickLinks": "Enlaces Rápidos",
+    "contactUs": "Contáctanos",
+    "facebook": "Síguenos en Facebook",
+    "rights": "Todos los derechos reservados."
+  },
+  "home": {
+    "heroTitle": "Encuentra Tu Próximo Auto Hoy",
+    "heroSubtitle": "Vehículos usados seleccionados e inspeccionados a precios razonables.",
+    "browseInventory": "Ver Inventario",
+    "contactUs": "Contáctanos",
+    "whyUsTitle": "Por Qué Comprar Con Nosotros",
+    "whyUs1Title": "Vehículos Inspeccionados",
+    "whyUs1Body": "Cada auto pasa una inspección de múltiples puntos antes de salir a la venta.",
+    "whyUs2Title": "Precios Justos",
+    "whyUs2Body": "Precios transparentes y sin regateo en cada vehículo.",
+    "whyUs3Title": "Financiamiento Disponible",
+    "whyUs3Body": "Trabajamos con varios prestamistas para ayudarte a calificar.",
+    "featuredTitle": "Vehículos Destacados",
+    "viewAll": "Ver Todo el Inventario",
+    "quickSearchButton": "Buscar"
+  },
+  "inventory": {
+    "title": "Nuestro Inventario",
+    "subtitle": "Explora nuestra selección completa de vehículos usados de calidad.",
+    "searchPlaceholder": "Buscar marca o modelo...",
+    "filterMake": "Marca",
+    "allMakes": "Todas las Marcas",
+    "allModels": "Todos los Modelos",
+    "anyYear": "Cualquier Año",
+    "anyPrice": "Cualquier Precio",
+    "underPrice": "Menos de ${price}",
+    "anyMileage": "Cualquier Kilometraje",
+    "underMileage": "Menos de {mileage} mi",
+    "filterStatus": "Estado",
+    "allStatuses": "Todos",
+    "sortBy": "Ordenar por",
+    "sortNewest": "Más Recientes",
+    "sortPriceAsc": "Precio: Menor a Mayor",
+    "sortPriceDesc": "Precio: Mayor a Menor",
+    "noResults": "Ningún vehículo coincide con tu búsqueda.",
+    "apply": "Aplicar Filtros",
+    "resultsCount": "{count, plural, =0 {Ningún vehículo} one {# vehículo} other {# vehículos}} encontrados"
+  },
+  "vehicle": {
+    "year": "Año",
+    "make": "Marca",
+    "model": "Modelo",
+    "trim": "Versión",
+    "price": "Precio",
+    "mileage": "Kilometraje",
+    "miles": "millas",
+    "color": "Color",
+    "fuelType": "Combustible",
+    "transmission": "Transmisión",
+    "bodyType": "Tipo de Carrocería",
+    "vin": "VIN",
+    "stockNumber": "No. de Inventario",
+    "status": "Estado",
+    "description": "Descripción",
+    "features": "Características",
+    "onSale": "En Oferta",
+    "specifications": "Especificaciones",
+    "backToInventory": "Volver al Inventario",
+    "interestedTitle": "¿Interesado en este vehículo?",
+    "contactAbout": "Consultar sobre este vehículo",
+    "sendMessage": "O envíanos un mensaje",
+    "shareTitle": "Compartir",
+    "shareText": "Mira este {title} en Mr. Cash Auto Sales:",
+    "shareCopyLink": "Copiar enlace",
+    "shareCopied": "¡Enlace copiado!",
+    "metaDescription": "{make} {model} {year} en venta por ${price} con {mileage} millas. Inspeccionado, con precio justo y listo para un test drive en Mr. Cash Auto Sales.",
+    "statusAvailable": "Disponible",
+    "statusPending": "Venta Pendiente",
+    "statusSold": "Vendido",
+    "fuel": {
+      "GASOLINE": "Gasolina",
+      "DIESEL": "Diésel",
+      "HYBRID": "Híbrido",
+      "ELECTRIC": "Eléctrico"
+    },
+    "transmissionType": {
+      "AUTOMATIC": "Automática",
+      "MANUAL": "Manual"
+    }
+  },
+  "about": {
+    "title": "Sobre Nuestro Dealership",
+    "body1": "Por años hemos ayudado a conductores de nuestra comunidad a encontrar vehículos usados confiables y accesibles. Cada auto en nuestro lote es inspeccionado, reacondicionado y respaldado por nuestro equipo.",
+    "body2": "Creemos que comprar un auto debería ser sencillo: precios transparentes, sin presión, y un equipo que realmente quiere ayudarte a encontrar el vehículo indicado.",
+    "hoursTitle": "Horario",
+    "mondayFriday": "Lunes - Viernes",
+    "saturday": "Sábado",
+    "sunday": "Domingo",
+    "closed": "Cerrado"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "¿Tienes preguntas sobre un vehículo o financiamiento? Envíanos un mensaje.",
+    "name": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Gracias! Te contactaremos pronto.",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "address": "Dirección",
+    "phoneLabel": "Teléfono",
+    "emailLabel": "Correo"
+  },
+  "financing": {
+    "title": "Aplicar para Financiamiento",
+    "subtitle": "Precalifica en minutos — sin afectar tu puntaje de crédito.",
+    "name": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "vehicleLabel": "Vehículo de tu interés",
+    "anyVehicle": "Ningún vehículo en particular",
+    "message": "¿Algo más que debamos saber? (ingresos, enganche, auto de cambio, etc.)",
+    "submit": "Enviar Solicitud",
+    "submitting": "Enviando...",
+    "success": "¡Gracias! Nuestro equipo de financiamiento te contactará pronto.",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "disclaimer": "Esta es una solicitud de precalificación, no una oferta de préstamo final. Enviar este formulario no garantiza la aprobación ni afecta tu puntaje de crédito."
+  },
+  "testDrive": {
+    "title": "Agenda un Test Drive",
+    "subtitle": "Elige un vehículo y un horario que te convenga — confirmaremos por teléfono o correo.",
+    "vehicleLabel": "Vehículo",
+    "selectVehicle": "Selecciona un vehículo...",
+    "date": "Fecha Preferida",
+    "time": "Hora Preferida",
+    "name": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "message": "¿Algo más que debamos saber? (opcional)",
+    "submit": "Solicitar Test Drive",
+    "submitting": "Enviando...",
+    "success": "¡Gracias! Confirmaremos tu test drive pronto.",
+    "error": "Algo salió mal. Inténtalo de nuevo."
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Respuestas a las preguntas que más recibimos.",
+    "financingQ": "¿Ofrecen financiamiento para compradores con crédito imperfecto?",
+    "financingA": "Sí — trabajamos con varios prestamistas y tenemos opciones para una amplia variedad de situaciones de crédito. Aplica para financiamiento en línea y nuestro equipo te contactará con la mejor oferta que encontremos.",
+    "tradeInQ": "¿Puedo dar mi auto actual a cuenta?",
+    "tradeInA": "Claro que sí. Trae tu vehículo para una evaluación gratuita, o menciónalo cuando nos contactes y te guiaremos en el proceso.",
+    "inspectedQ": "¿Sus vehículos son inspeccionados antes de venderse?",
+    "inspectedA": "Cada vehículo en nuestro lote pasa una inspección de múltiples puntos y es reacondicionado antes de ponerse a la venta.",
+    "warrantyQ": "¿Ofrecen garantía?",
+    "warrantyA": "Muchos de nuestros vehículos incluyen garantía limitada, y hay opciones de garantía extendida disponibles al momento de la compra. Pregunta a nuestro equipo de ventas por los detalles de un vehículo específico.",
+    "testDriveQ": "¿Puedo agendar un test drive en línea?",
+    "testDriveA": "Sí — usa el botón \"Agendar Test Drive\" en cualquier parte del sitio, elige el vehículo y un horario que te convenga, y confirmaremos por teléfono o correo.",
+    "documentsQ": "¿Qué documentos necesito para comprar un auto?",
+    "documentsA": "Generalmente necesitarás una licencia de conducir vigente, comprobante de seguro, y comprobante de ingresos si vas a financiar. Nuestro equipo te indicará si se necesita algo más para tu situación."
+  },
+  "reviews": {
+    "title": "Reseñas de Clientes",
+    "subtitle": "Mira lo que dicen nuestros clientes — y comparte tu propia experiencia.",
+    "homeTitle": "Lo Que Dicen Nuestros Clientes",
+    "viewAll": "Ver todas las reseñas",
+    "averageSummary": "{rating} de 5 · {count, plural, one {# reseña} other {# reseñas}}",
+    "leaveTitle": "Deja una Reseña",
+    "name": "Tu Nombre",
+    "rating": "Calificación",
+    "comment": "Tu Reseña",
+    "submit": "Enviar Reseña",
+    "submitting": "Enviando...",
+    "success": "¡Gracias por tu reseña! Aparecerá en el sitio una vez que nuestro equipo la apruebe.",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "empty": "Todavía no hay reseñas. ¡Sé el primero en dejar una!"
+  },
+  "location": {
+    "title": "Visita Nuestro Dealership",
+    "subtitle": "Ven a ver nuestro inventario en persona — no necesitas cita.",
+    "addressTitle": "Dirección",
+    "directionsTitle": "Cómo Llegar",
+    "directionsBody": "Estamos ubicados en E Bullard Ave en Lake Wales, con suficiente estacionamiento para clientes en el lugar. Busca el letrero de Mr. Cash Auto Sales en el frente.",
+    "getDirections": "Cómo Llegar"
+  },
+  "admin": {
+    "login": {
+      "title": "Acceso de Administrador",
+      "subtitle": "Inicia sesión para administrar el inventario.",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "submit": "Iniciar Sesión",
+      "submitting": "Iniciando sesión...",
+      "error": "Correo o contraseña inválidos."
+    },
+    "nav": {
+      "dashboard": "Panel",
+      "vehicles": "Vehículos",
+      "messages": "Mensajes",
+      "reviews": "Reseñas",
+      "settings": "Configuración del Negocio",
+      "account": "Mi Cuenta",
+      "viewSite": "Ver Sitio",
+      "logout": "Cerrar Sesión"
+    },
+    "settings": {
+      "title": "Configuración del Negocio",
+      "subtitle": "Edita los datos de contacto, el horario y los enlaces que se muestran en todo el sitio público. Deja un campo vacío para usar el valor predeterminado.",
+      "sectionBusiness": "Negocio",
+      "sectionContact": "Contacto",
+      "sectionAddress": "Dirección",
+      "sectionHours": "Horario",
+      "sectionSocial": "Redes Sociales",
+      "sectionNotifications": "Notificaciones de prospectos",
+      "businessName": "Nombre del negocio",
+      "phoneDisplay": "Teléfono (como se muestra)",
+      "phoneE164": "Teléfono (para enlaces de llamada/SMS)",
+      "whatsappE164": "Número de WhatsApp",
+      "email": "Correo electrónico",
+      "addressLine1": "Dirección línea 1",
+      "addressLine2": "Dirección línea 2 (ciudad, estado, código postal)",
+      "hoursWeekdays": "Lunes a Viernes",
+      "hoursSaturday": "Sábado",
+      "hoursSunday": "Domingo",
+      "facebookUrl": "URL de la página de Facebook",
+      "notificationEmail": "Correo para avisos de prospectos",
+      "e164Hint": "Usa el formato internacional para los números de llamada/SMS y WhatsApp, por ejemplo +18632410086.",
+      "notificationEmailHint": "A dónde enviar un aviso cada vez que llega una nueva solicitud de prueba de manejo, financiamiento o contacto. Déjalo vacío para desactivar las notificaciones.",
+      "save": "Guardar Configuración",
+      "saving": "Guardando...",
+      "success": "Configuración guardada. El sitio público se ha actualizado.",
+      "error": "Algo salió mal. Revisa los campos e inténtalo de nuevo."
+    },
+    "account": {
+      "title": "Mi Cuenta",
+      "loggedInAs": "Sesión iniciada como {name} ({email})",
+      "changePasswordTitle": "Cambiar Contraseña",
+      "changePasswordSubtitle": "Ingresa tu contraseña actual y luego elige una nueva.",
+      "currentPassword": "Contraseña Actual",
+      "newPassword": "Nueva Contraseña (mín. 8 caracteres)",
+      "confirmPassword": "Confirmar Nueva Contraseña",
+      "submit": "Actualizar Contraseña",
+      "submitting": "Actualizando...",
+      "success": "Tu contraseña ha sido actualizada.",
+      "error": "Algo salió mal. Inténtalo de nuevo."
+    },
+    "dashboard": {
+      "title": "Panel de Control",
+      "welcome": "Bienvenido, {name}",
+      "totalVehicles": "Vehículos Totales",
+      "available": "Disponibles",
+      "sold": "Vendidos",
+      "newMessages": "Prospectos Nuevos",
+      "pendingReviews": "Reseñas Pendientes"
+    },
+    "vehicles": {
+      "title": "Vehículos",
+      "addNew": "Agregar Vehículo",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "confirmDelete": "¿Seguro que deseas eliminar este vehículo? Esta acción no se puede deshacer.",
+      "noVehicles": "Todavía no hay vehículos.",
+      "table": {
+        "vehicle": "Vehículo",
+        "price": "Precio",
+        "status": "Estado",
+        "featured": "Destacado",
+        "actions": "Acciones"
+      }
+    },
+    "form": {
+      "newTitle": "Agregar Nuevo Vehículo",
+      "editTitle": "Editar Vehículo",
+      "make": "Marca",
+      "model": "Modelo",
+      "year": "Año",
+      "trim": "Versión (opcional)",
+      "price": "Precio (USD)",
+      "onSale": "En oferta",
+      "originalPrice": "Precio original (opcional, se muestra tachado)",
+      "mileage": "Kilometraje",
+      "vin": "VIN (opcional)",
+      "stockNumber": "No. de Inventario (opcional)",
+      "color": "Color",
+      "fuelType": "Combustible",
+      "transmission": "Transmisión",
+      "bodyType": "Tipo de Carrocería",
+      "status": "Estado",
+      "featured": "Destacar en la página de inicio",
+      "description": "Descripción",
+      "features": "Características (una por línea)",
+      "photos": "Fotos",
+      "addPhotoUrl": "Agregar",
+      "uploadFromDevice": "Subir desde el equipo",
+      "uploading": "Subiendo...",
+      "primaryPhoto": "Foto principal",
+      "makePrimary": "Marcar como principal",
+      "moveUp": "Subir",
+      "moveDown": "Bajar",
+      "removePhoto": "Eliminar",
+      "save": "Guardar Vehículo",
+      "saving": "Guardando...",
+      "cancel": "Cancelar"
+    },
+    "messages": {
+      "title": "Prospectos",
+      "noMessages": "Todavía no hay prospectos.",
+      "searchPlaceholder": "Buscar por nombre, teléfono o correo...",
+      "allTypes": "Todos los Tipos",
+      "allStatuses": "Todos los Estados",
+      "applyFilters": "Filtrar",
+      "setStatus": "Cambiar estado:",
+      "from": "De",
+      "about": "Sobre el vehículo",
+      "type": {
+        "TEST_DRIVE": "Prueba de Manejo",
+        "FINANCING": "Financiamiento",
+        "GENERAL_INQUIRY": "Consulta General"
+      },
+      "status": {
+        "NEW": "Nuevo",
+        "CONTACTED": "Contactado",
+        "CLOSED": "Cerrado"
+      }
+    },
+    "reviews": {
+      "title": "Reseñas",
+      "subtitle": "Aprueba las reseñas pendientes para publicarlas en el sitio, o elimina reseñas en cualquier momento.",
+      "pendingTitle": "Pendientes",
+      "approvedTitle": "Aprobadas",
+      "rejectedTitle": "Rechazadas",
+      "noPending": "No hay reseñas pendientes.",
+      "noApproved": "No hay reseñas aprobadas.",
+      "noRejected": "No hay reseñas rechazadas.",
+      "approve": "Aprobar",
+      "reject": "Rechazar",
+      "delete": "Eliminar",
+      "ratingValue": "{rating}/5",
+      "confirmReject": "¿Rechazar esta reseña? No se mostrará en el sitio.",
+      "confirmDelete": "¿Eliminar esta reseña de forma permanente? Esta acción no se puede deshacer."
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "currency": "USD"
+  }
+}
