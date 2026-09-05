@@ -1,6 +1,6 @@
 // Prisma schema for the dealership inventory + admin auth.
-// Using SQLite for local development — swap `provider` to "postgresql"
-// and update DATABASE_URL when moving to production.
+// PostgreSQL — DATABASE_URL is a Postgres connection string (Neon in
+// production; point it at a Neon branch or a local Postgres for dev).
 
 generator client {
   provider     = "prisma-client"
@@ -9,7 +9,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
 }
 
 enum VehicleStatus {

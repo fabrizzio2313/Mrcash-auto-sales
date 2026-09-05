@@ -1,15 +1,18 @@
 import { PrismaClient } from "@/lib/generated/prisma/client";
-import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
+import { PrismaPg } from "@prisma/adapter-pg";
 
 // Prisma 7 has no built-in query engine binary — it talks to the database
-// through a driver adapter instead. For SQLite that's better-sqlite3.
+// through a driver adapter instead. For PostgreSQL that's node-postgres (`pg`),
+// via @prisma/adapter-pg.
 //
-// DATABASE_URL is resolved relative to the project root (where `next dev`
-// runs from), e.g. "file:./prisma/dev.db".
+// DATABASE_URL is a Postgres connection string, e.g. from Neon:
+//   postgresql://user:password@host.neon.tech/dbname?sslmode=require
 function createPrismaClient() {
-  const adapter = new PrismaBetterSqlite3({
-    url: process.env.DATABASE_URL ?? "file:./prisma/dev.db",
-  });
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) {
+    throw new Error("DATABASE_URL is not set");
+  }
+  const adapter = new PrismaPg({ connectionString });
   return new PrismaClient({ adapter });
 }
 

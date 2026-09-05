@@ -7,10 +7,10 @@ inventario.
 ## Stack
 
 - **Next.js 16** (App Router) + **TypeScript** + **Tailwind CSS v4**
-- **Prisma 7** + **SQLite** (vía driver adapter `better-sqlite3`) para el
-  inventario — cambiar a Postgres/MySQL más adelante es solo cuestión de
-  ajustar `datasource.provider` en `prisma/schema.prisma`, el adapter en
-  `lib/prisma.ts`, y `DATABASE_URL`.
+- **Prisma 7** + **PostgreSQL** (vía driver adapter `@prisma/adapter-pg`).
+  En producción se usa [Neon](https://neon.tech) (Postgres serverless, plan
+  gratis); en local, apuntá `DATABASE_URL` a una branch de Neon o a un
+  Postgres local.
 - **next-intl** para el soporte bilingüe (rutas `/en/...` y `/es/...`)
 - Autenticación de admin **propia** (sin proveedor externo): sesión firmada
   con JWT (`jose`) en una cookie httpOnly, contraseñas con `bcryptjs`.
@@ -18,18 +18,38 @@ inventario.
 ## Primeros pasos
 
 ```bash
-npm install        # también corre `prisma generate` (postinstall)
-npm run db:migrate # crea prisma/dev.db y aplica el schema
-npm run db:seed    # crea un usuario admin y algunos vehículos de ejemplo
-npm run dev        # http://localhost:3000 (redirige a /en)
+cp .env.example .env   # y completá DATABASE_URL (Postgres) + SESSION_SECRET
+npm install            # también corre `prisma generate` (postinstall)
+npm run db:deploy      # aplica las migraciones a la base apuntada por DATABASE_URL
+npm run db:seed        # crea un usuario admin y algunos vehículos de ejemplo
+npm run dev            # http://localhost:3000 (redirige a /en)
 ```
 
-Copia `.env.example` a `.env` y genera un `SESSION_SECRET` real antes de
-desplegar a producción:
+Generá un `SESSION_SECRET` real:
 
 ```bash
-openssl rand -base64 32
+node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
 ```
+
+## Deploy a Vercel
+
+1. **Base de datos:** en el proyecto de Vercel → **Storage → Create Database
+   → Neon**. Vercel agrega `DATABASE_URL` a las variables de entorno solo.
+2. **Variables de entorno** (Project → Settings → Environment Variables):
+   - `DATABASE_URL` — la pone Neon/Vercel automáticamente.
+   - `SESSION_SECRET` — 32 bytes aleatorios en base64 (comando de arriba).
+   - `RESEND_API_KEY` — clave de Resend, o vacía (los avisos por email se
+     omiten, los prospectos igual se guardan).
+   - `EMAIL_FROM` — `onboarding@resend.dev` para empezar.
+3. **Build:** el script `vercel-build` corre `prisma migrate deploy` antes de
+   `next build`, así que cada deploy aplica las migraciones pendientes.
+4. **Primer deploy:** después de que termine, sembrá el usuario admin
+   corriendo `npm run db:seed` localmente con el `DATABASE_URL` de Neon en tu
+   `.env`. Cambiá la contraseña del admin enseguida.
+
+> La subida de fotos *desde el dispositivo* (`/api/upload`) escribe a disco y
+> **no funciona en Vercel** — el admin puede pegar URLs de imágenes. Para
+> uploads reales hace falta un servicio de storage (Cloudinary/S3/R2).
 
 ### Credenciales de admin (solo para desarrollo)
 
