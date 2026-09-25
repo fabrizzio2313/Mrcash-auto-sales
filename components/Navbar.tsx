@@ -43,14 +43,14 @@ export default async function Navbar() {
           </a>
           <Link
             href="/test-drive"
-            className="flex min-h-11 items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-2 text-xs font-semibold text-white hover:bg-white/20 sm:min-h-0 sm:py-1.5"
+            className="btn-fx flex min-h-11 items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-2 text-xs font-semibold text-white hover:bg-white/20 sm:min-h-0 sm:py-1.5"
           >
             <CalendarIcon className="h-4 w-4" />
             {t("testDrive")}
           </Link>
           <Link
             href="/financing"
-            className="flex min-h-11 items-center gap-1.5 rounded-full bg-amber-400 px-3.5 py-2 text-xs font-semibold text-slate-900 hover:bg-amber-300 sm:min-h-0 sm:py-1.5"
+            className="btn-fx flex min-h-11 items-center gap-1.5 rounded-full bg-amber-400 px-3.5 py-2 text-xs font-semibold text-slate-900 hover:bg-amber-300 sm:min-h-0 sm:py-1.5"
           >
             <CreditCardIcon className="h-4 w-4" />
             {t("financing")}

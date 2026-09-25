@@ -6,7 +6,13 @@ import CtaButtons from "@/components/CtaButtons";
 import QuickSearchBar from "@/components/QuickSearchBar";
 import ReviewsList from "@/components/ReviewsList";
 import StarRating from "@/components/StarRating";
-import { getFeaturedVehicles, getDistinctMakes } from "@/lib/vehicles";
+import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
+import {
+  getFeaturedVehicles,
+  getDistinctMakes,
+  getAvailableVehicleCount,
+} from "@/lib/vehicles";
 import { getApprovedReviews, getApprovedReviewSummary } from "@/lib/reviews";
 import { buildAlternates } from "@/lib/seo";
 
@@ -34,11 +40,12 @@ export default async function HomePage({
 
   const t = await getTranslations("home");
   const tReviews = await getTranslations("reviews");
-  const [featured, makes, reviews, reviewSummary] = await Promise.all([
+  const [featured, makes, reviews, reviewSummary, availableCount] = await Promise.all([
     getFeaturedVehicles(),
     getDistinctMakes(),
     getApprovedReviews(4),
     getApprovedReviewSummary(),
+    getAvailableVehicleCount(),
   ]);
 
   return (
@@ -73,19 +80,52 @@ export default async function HomePage({
       </div>
 
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-          {t("whyUsTitle")}
-        </h2>
+        <Reveal>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+            {t("whyUsTitle")}
+          </h2>
+        </Reveal>
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
-          <WhyUsCard title={t("whyUs1Title")} body={t("whyUs1Body")} />
-          <WhyUsCard title={t("whyUs2Title")} body={t("whyUs2Body")} />
-          <WhyUsCard title={t("whyUs3Title")} body={t("whyUs3Body")} />
+          <Reveal delay={0}>
+            <WhyUsCard title={t("whyUs1Title")} body={t("whyUs1Body")} />
+          </Reveal>
+          <Reveal delay={90}>
+            <WhyUsCard title={t("whyUs2Title")} body={t("whyUs2Body")} />
+          </Reveal>
+          <Reveal delay={180}>
+            <WhyUsCard title={t("whyUs3Title")} body={t("whyUs3Body")} />
+          </Reveal>
         </div>
+      </section>
+
+      {/* Stats band — every number comes from live data (or, for "100%
+          inspected", from the promise already made in Why Buy From Us). */}
+      <section className="bg-[#0b1a33] text-white">
+        <Reveal className="mx-auto flex max-w-6xl flex-wrap justify-center gap-y-8 px-4 py-12 sm:px-6">
+          {availableCount > 0 && (
+            <Stat label={t("statVehicles")}>
+              <CountUp value={availableCount} />
+            </Stat>
+          )}
+          <Stat label={t("statInspected")}>
+            <CountUp value={100} suffix="%" />
+          </Stat>
+          {reviewSummary.average != null && (
+            <Stat label={t("statRating")}>
+              <CountUp value={reviewSummary.average} decimals={1} suffix="★" />
+            </Stat>
+          )}
+          {reviewSummary.count > 0 && (
+            <Stat label={t("statReviews")}>
+              <CountUp value={reviewSummary.count} />
+            </Stat>
+          )}
+        </Reveal>
       </section>
 
       {reviews.length > 0 && (
         <section className="bg-slate-50 py-14 dark:bg-slate-950">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <Reveal className="mx-auto max-w-6xl px-4 sm:px-6">
             <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -113,19 +153,19 @@ export default async function HomePage({
             <div className="mt-6">
               <ReviewsList reviews={reviews} />
             </div>
-          </div>
+          </Reveal>
         </section>
       )}
 
       <section className="mx-auto max-w-6xl px-4 pb-16 pt-14 sm:px-6">
-        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+        <Reveal className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
             {t("featuredTitle")}
           </h2>
           <Link href="/inventory" className="text-sm font-medium text-blue-600 hover:underline">
             {t("viewAll")}
           </Link>
-        </div>
+        </Reveal>
         <div className="mt-6">
           <VehicleGrid vehicles={featured} />
         </div>
@@ -134,9 +174,20 @@ export default async function HomePage({
   );
 }
 
+function Stat({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div className="flex w-1/2 flex-col items-center px-2 text-center lg:w-1/4">
+      <span className="text-3xl font-bold tracking-tight text-amber-400 sm:text-4xl">
+        {children}
+      </span>
+      <span className="mt-1 text-sm text-slate-300">{label}</span>
+    </div>
+  );
+}
+
 function WhyUsCard({ title, body }: { title: string; body: string }) {
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+    <div className="h-full rounded-xl border border-slate-200 bg-white p-6 transition-[translate,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-900/5 motion-reduce:transition-none dark:border-slate-800 dark:bg-slate-900">
       <h3 className="font-semibold text-slate-900 dark:text-white">{title}</h3>
       <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{body}</p>
     </div>

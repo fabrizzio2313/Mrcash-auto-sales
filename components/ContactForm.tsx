@@ -89,7 +89,7 @@ export default function ContactForm({ vehicleId }: { vehicleId?: string }) {
       <button
         type="submit"
         disabled={pending}
-        className="min-h-11 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-60"
+        className="btn-fx min-h-11 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-60"
       >
         {pending ? t("sending") : t("send")}
       </button>

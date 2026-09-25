@@ -77,7 +77,11 @@
     "whyUs3Body": "We work with multiple lenders to get you approved.",
     "featuredTitle": "Featured Vehicles",
     "viewAll": "View All Inventory",
-    "quickSearchButton": "Search"
+    "quickSearchButton": "Search",
+    "statVehicles": "Vehicles Available",
+    "statInspected": "Inspected Before Sale",
+    "statRating": "Average Rating",
+    "statReviews": "Customer Reviews"
   },
   "inventory": {
     "title": "Our Inventory",

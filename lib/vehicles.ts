@@ -99,6 +99,10 @@ export async function getFeaturedVehicles(limit = 3) {
   });
 }
 
+export async function getAvailableVehicleCount() {
+  return prisma.vehicle.count({ where: { status: "AVAILABLE" } });
+}
+
 export async function getAvailableVehicles() {
   return prisma.vehicle.findMany({
     where: { status: "AVAILABLE" },

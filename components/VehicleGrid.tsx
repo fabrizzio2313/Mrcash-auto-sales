@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import VehicleCard from "@/components/VehicleCard";
+import Reveal from "@/components/Reveal";
 import type { Vehicle, Photo } from "@/lib/generated/prisma/client";
 
 type VehicleWithPhotos = Vehicle & { photos: Photo[] };
@@ -21,8 +22,12 @@ export default function VehicleGrid({
 
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {vehicles.map((vehicle) => (
-        <VehicleCard key={vehicle.id} vehicle={vehicle} />
+      {vehicles.map((vehicle, i) => (
+        // Stagger across a row (3 columns max) so cards that scroll in
+        // together cascade instead of popping in as a block.
+        <Reveal key={vehicle.id} delay={(i % 3) * 90}>
+          <VehicleCard vehicle={vehicle} />
+        </Reveal>
       ))}
     </div>
   );

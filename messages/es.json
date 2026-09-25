@@ -77,7 +77,11 @@
     "whyUs3Body": "Trabajamos con varios prestamistas para ayudarte a calificar.",
     "featuredTitle": "Vehículos Destacados",
     "viewAll": "Ver Todo el Inventario",
-    "quickSearchButton": "Buscar"
+    "quickSearchButton": "Buscar",
+    "statVehicles": "Vehículos Disponibles",
+    "statInspected": "Inspeccionados Antes de la Venta",
+    "statRating": "Calificación Promedio",
+    "statReviews": "Reseñas de Clientes"
   },
   "inventory": {
     "title": "Nuestro Inventario",

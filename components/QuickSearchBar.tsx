@@ -36,7 +36,7 @@ export default async function QuickSearchBar({ makes }: { makes: string[] }) {
 
       <button
         type="submit"
-        className="flex min-h-11 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-500"
+        className="btn-fx flex min-h-11 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-500"
       >
         <SearchIcon className="h-4 w-4" />
         {t("quickSearchButton")}

@@ -107,7 +107,7 @@ export default function FinancingForm({
       <button
         type="submit"
         disabled={pending}
-        className="min-h-11 rounded-lg bg-amber-400 px-4 py-2.5 text-sm font-semibold text-slate-900 hover:bg-amber-300 disabled:opacity-60"
+        className="btn-fx min-h-11 rounded-lg bg-amber-400 px-4 py-2.5 text-sm font-semibold text-slate-900 hover:bg-amber-300 disabled:opacity-60"
       >
         {pending ? t("submitting") : t("submit")}
       </button>
