@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -8,6 +9,7 @@ import ReviewsList from "@/components/ReviewsList";
 import StarRating from "@/components/StarRating";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
+import HeroCar from "@/components/HeroCar";
 import {
   getFeaturedVehicles,
   getDistinctMakes,
@@ -50,27 +52,43 @@ export default async function HomePage({
 
   return (
     <div>
-      <section className="relative overflow-hidden bg-[#0b1a33] text-white">
+      {/* data-hero-intro sequences the headline reveal with the 3D car —
+          see the "Home hero choreography" section of globals.css. */}
+      <section
+        data-hero-intro="pending"
+        className="relative overflow-hidden bg-[#0b1a33] text-white"
+      >
         {/* Background photo — same image/overlay treatment for both locales,
-            since this page is shared across /en and /es. */}
+            since this page is shared across /en and /es. Extends above the
+            hero so the scroll parallax never reveals an edge. */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="hero-bg absolute inset-x-0 -top-[20vh] bottom-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1920&q=80')",
+              "url('https://images.unsplash.com/photo-1494783367193-149034c05e8f?w=1920&q=80')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b1a33] via-[#0b1a33]/85 to-[#0b1a33]/30" />
+        <div className="hero-warmth absolute inset-0" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0b1a33]/70 via-transparent to-transparent" />
 
         <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-6 px-4 pb-20 pt-24 sm:px-6 sm:pb-28 sm:pt-32">
-          <h1 className="max-w-2xl text-4xl font-bold tracking-tight drop-shadow-sm sm:text-5xl">
-            {t("heroTitle")}
+          <h1 className="max-w-2xl text-4xl font-bold tracking-tight drop-shadow-sm sm:text-5xl lg:max-w-[calc(50%-1rem)]">
+            <RevealWords text={t("heroTitle")} />
           </h1>
-          <p className="max-w-xl text-lg text-slate-200 drop-shadow-sm">
-            {t("heroSubtitle")}
+          <p className="max-w-xl text-lg text-slate-200 drop-shadow-sm lg:max-w-[calc(50%-1rem)]">
+            {/* Follows the headline's words in the reveal stagger. */}
+            <span className="hero-line">
+              <span style={{ "--i": 6 } as React.CSSProperties}>{t("heroSubtitle")}</span>
+            </span>
           </p>
-          <CtaButtons />
+          {/* On phones the car sits in the flow between the copy and the CTAs;
+              from lg up it fills the right half of the hero, bleeding to the
+              viewport edge so it can drive in from off-screen. */}
+          <HeroCar className="relative -mx-4 -my-2 h-52 w-[calc(100%+2rem)] sm:mx-0 sm:h-72 sm:w-full lg:absolute lg:inset-y-0 lg:left-1/2 lg:right-[calc(50%-50vw)] lg:mx-0 lg:my-0 lg:h-auto lg:w-auto" />
+          <div className="w-full sm:w-auto lg:max-w-[calc(50%-1rem)]">
+            <CtaButtons />
+          </div>
         </div>
       </section>
 
@@ -172,6 +190,18 @@ export default async function HomePage({
       </section>
     </div>
   );
+}
+
+/** Wraps each word in its own mask so they can rise in one by one. */
+function RevealWords({ text }: { text: string }) {
+  return text.split(" ").map((word, i) => (
+    <Fragment key={i}>
+      {i > 0 && " "}
+      <span className="hero-line">
+        <span style={{ "--i": i } as React.CSSProperties}>{word}</span>
+      </span>
+    </Fragment>
+  ));
 }
 
 function Stat({ label, children }: { label: string; children: React.ReactNode }) {

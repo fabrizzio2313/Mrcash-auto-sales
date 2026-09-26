@@ -137,7 +137,92 @@ body {
   }
 }
 
+/* ------------------------------------------------------------------ */
+/* Home hero choreography                                               */
+/* ------------------------------------------------------------------ */
+
+/* Parallax: the road drifts down at a fraction of the scroll speed, so it
+   feels farther away than the car and the copy. Pure CSS scroll-driven
+   animation (runs off the main thread); browsers without support just
+   keep the photo still. The layer extends 20vh above the hero so the
+   downward drift never uncovers a gap. */
+@supports (animation-timeline: scroll()) {
+  .hero-bg {
+    animation: hero-parallax linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100vh;
+  }
+}
+@keyframes hero-parallax {
+  to {
+    translate: 0 20vh;
+  }
+}
+
+/* A warm dusk tint that slowly breathes in and out over the navy overlay.
+   Only opacity animates, so it costs next to nothing. */
+.hero-warmth {
+  background: linear-gradient(
+    to right,
+    rgb(46 24 40 / 0.55),
+    rgb(92 46 24 / 0.3) 55%,
+    rgb(150 80 30 / 0.18)
+  );
+  opacity: 0;
+  animation: hero-warmth 12s ease-in-out infinite alternate;
+}
+@keyframes hero-warmth {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Headline reveal: each word rises out of its own mask. Driven by
+   data-hero-intro on the hero section (see components/HeroCar.tsx):
+     pending  server default: hidden, with a CSS-only fallback reveal at
+              2.5s in case JS is slow or disabled
+     hold     JS is waiting for the car to finish its drift
+     go       the car just stopped: reveal now
+   The mask pads the bottom so descenders (the "y" in "Today") aren't cut. */
+.hero-line {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+.hero-line > span {
+  display: inline-block;
+}
+[data-hero-intro="pending"] .hero-line > span {
+  animation: hero-rise 900ms var(--ease-out-soft) both;
+  animation-delay: calc(2.5s + var(--i, 0) * 70ms);
+}
+[data-hero-intro="hold"] .hero-line > span {
+  opacity: 0;
+  translate: 0 110%;
+}
+[data-hero-intro="go"] .hero-line > span {
+  animation: hero-rise 900ms var(--ease-out-soft) both;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    translate: 0 110%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .hero-bg,
+  .hero-warmth,
+  [data-hero-intro] .hero-line > span {
+    animation: none !important;
+  }
+  [data-hero-intro] .hero-line > span {
+    opacity: 1 !important;
+    translate: none !important;
+  }
   [data-reveal] {
     opacity: 1 !important;
     transform: none !important;

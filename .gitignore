@@ -58,3 +58,6 @@ next-env.d.ts
 !.vscode/extensions.json
 .idea
 .claude/settings.local.json
+
+# Original, uncompressed 3D models (only the optimized copies in public/ ship)
+source-assets/
